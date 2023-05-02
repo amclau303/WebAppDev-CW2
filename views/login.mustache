@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    {{>head}}
+</head>
+<body>
+    {{>navbar}}
+
+<main class="form-signin w-25 m-auto text-center">
+  <form data-bitwarden-watching="1">
+    <h1 class="h3 mb-3 mt-5 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Username">
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="w-50 mt-3 btn btn-lg btn-primary" type="submit">Sign in</button>
+  </form>
+</main>
+</body>
