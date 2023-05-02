@@ -4,5 +4,6 @@ const controller = require("../controllers/websiteController.js");
 
 router.get("/", controller.index_page);
 router.get("/login", controller.login_page);
+router.get("/register", controller.register_page);
 
 module.exports = router;
