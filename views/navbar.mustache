@@ -42,7 +42,12 @@
         Wellbeing Web Application
       </a>
       <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+        {{^user}}
         <a class="btn btn-primary-outline" href="/login">Sign-in/Register</a>
+        {{/user}}
+        {{#user}}
+        <a class="btn btn-primary-outline" href="/logout" id="logout">Sign out</a>
+        {{/user}}
       </div>
     </div>
   </div>
