@@ -64,38 +64,6 @@
   </div>
 </nav>
 
-{{! 
-<div
-  class="offcanvas offcanvas-start navbar-expand-sm"
-  data-bs-scroll="true"
-  data-bs-backdrop="true"
-  data-bs-width="200px"
-  tabindex="-1"
-  id="offcanvasScrolling"
-  aria-labelledby="offcanvasScrollingLabel"
->
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Navigation</h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="list-group">
-      <a class="list-group-item list-group-item-action text-center" href="#"> Nutrition</a>
-      <a class="list-group-item list-group-item-action text-center" href="#"> Fitness</a>
-      <a class="list-group-item list-group-item-action text-center" href="#"> Lifestyle</a>
-      <a class="list-group-item list-group-item-action text-center" href="#"> Goals</a>
-
-    </div>
-
-  </div>
-</div>
-}}
-
 <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;" data-bs-scroll="true"
 data-bs-backdrop="true"
 data-bs-width="200px"
@@ -103,46 +71,43 @@ tabindex="-1"
 id="offcanvasScrolling"
 aria-labelledby="offcanvasScrollingLabel" >
   <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-    <svg class="bi bi-house" width="40" height="32"></svg>
+    <i class="fa-solid fa-house ms-2" width="40" height="32"></i>
     <span class="visually-hidden">Icon-only</span>
   </a>
-  <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+  <ul class="nav nav-pills nav-flush flex-column mb-auto text-center text-decoration-none">
     <li class="nav-item">
-      <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-        <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Home"><use xlink:href="#home"></use></svg>
+      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Nutrition" data-bs-original-title="Nutrition">
+        <i class="fa-solid fa-carrot" width="24" height="24" aria-label="Nutrition"></i>
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
-        <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Dashboard"><use xlink:href="#speedometer2"></use></svg>
+      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Fitness" data-bs-original-title="Fitness">
+        <i class="fa-solid fa-dumbbell" width="24" height="24" aria-label="Fitness"></i>
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
-        <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Orders"><use xlink:href="#table"></use></svg>
+      <a href="#" class="nav-link py-3 border-bottom rounded-0 text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Healthy" data-bs-original-title="Healthy">
+        <i class="fa-solid fa-heart" width="24" height="24" aria-label="Healthy"></i>
       </a>
     </li>
+    {{#user}}
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
-        <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Products"><use xlink:href="#grid"></use></svg>
+      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Goals" data-bs-original-title="Goals">
+        <i class="fa-solid fa-clipboard" width="24" height="24" aria-label="Goals"></i>
       </a>
     </li>
-    <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
-        <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"></use></svg>
-      </a>
-    </li>
+    {{/user}}
   </ul>
+
+
+  {{#user}}
   <div class="dropdown border-top">
     <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      <i class="fa-solid fa-user" width="24" height="24" class="rounded-circle"></i>
     </a>
     <ul class="dropdown-menu text-small shadow">
-      <li><a class="dropdown-item" href="#">New project...</a></li>
-      <li><a class="dropdown-item" href="#">Settings</a></li>
-      <li><a class="dropdown-item" href="#">Profile</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
+      <li><a class="dropdown-item" href="/logout">Sign out</a></li>
     </ul>
   </div>
+  {{/user}}
 </div>
