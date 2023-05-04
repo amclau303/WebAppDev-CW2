@@ -11,6 +11,8 @@ router.post("/login", login, controller.handle_login);
 router.get("/register", controller.register_page);
 router.post("/register", controller.post_new_user);
 
+router.get("/home", verify, controller.user_page)
+router.get("/logout", verify, controller.logout);
 
 
 module.exports = router;

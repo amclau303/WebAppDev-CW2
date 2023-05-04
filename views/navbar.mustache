@@ -14,7 +14,6 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
       <a
         class="navbar-brand col-lg-3 me-0"
@@ -35,18 +34,30 @@
           />
         </svg>
       </a>
+      {{^user}}
       <a
-        class="navbar-nav col-lg-6 justify-content-lg-center text-decoration-none text-dark"
+        class="navbar-nav col-lg-6 justify-content-lg-center text-decoration-none text-dark text-center"
         href="/"
+        >Wellbeing Web Application</a
       >
-        Wellbeing Web Application
-      </a>
+      {{/user}}
+
+      {{#user}}
+      <a
+        class="navbar-nav col-lg-6 justify-content-lg-center text-decoration-none text-dark text-center"
+        href="/home"
+        >Wellbeing Web Application</a
+      >
+      {{/user}}
+
       <div class="d-lg-flex col-lg-3 justify-content-lg-end">
         {{^user}}
         <a class="btn btn-primary-outline" href="/login">Sign-in/Register</a>
         {{/user}}
         {{#user}}
-        <a class="btn btn-primary-outline" href="/logout" id="logout">Sign out</a>
+        <a class="btn btn-primary-outline" href="/logout" id="logout"
+          >Sign out</a
+        >
         {{/user}}
       </div>
     </div>
@@ -54,9 +65,10 @@
 </nav>
 
 <div
-  class="offcanvas offcanvas-start"
+  class="offcanvas offcanvas-start navbar-expand-sm"
   data-bs-scroll="true"
   data-bs-backdrop="true"
+  data-bs-width="200px"
   tabindex="-1"
   id="offcanvasScrolling"
   aria-labelledby="offcanvasScrollingLabel"
@@ -71,6 +83,11 @@
     ></button>
   </div>
   <div class="offcanvas-body">
-    <p>A</p>
+    <ul>
+      <li href="/">Home</li>
+      <li href="/">Home</li>
+      <li href="/">Home</li>
+      <li href="/">Home</li>
+    </ul>
   </div>
 </div>
