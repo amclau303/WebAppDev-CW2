@@ -12,11 +12,7 @@ class UserDAO {
   }
   init() {
     this.db.insert({
-      user: "Peter",
-      password: "$2b$10$I82WRFuGghOMjtu3LLZW9OAMrmYOlMZjEEkh.vx.K2MM05iu5hY2C",
-    });
-    this.db.insert({
-      user: "Ann",
+      user: "Admin",
       password: "$2b$10$bnEYkqZM.MhEF/LycycymOeVwkQONq8kuAUGx6G5tF9UtUcaYDs3S",
     });
     return this;

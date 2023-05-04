@@ -70,35 +70,44 @@ data-bs-width="200px"
 tabindex="-1"
 id="offcanvasScrolling"
 aria-labelledby="offcanvasScrollingLabel" >
+
+
+  {{^user}}
   <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
     <i class="fa-solid fa-house ms-2" width="40" height="32"></i>
     <span class="visually-hidden">Icon-only</span>
   </a>
+  {{/user}}
+  {{#user}}
+  <a href="/home" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+    <i class="fa-solid fa-house ms-2" width="40" height="32"></i>
+    <span class="visually-hidden">Icon-only</span>
+  </a>
+  {{/user}}
+  {{#user}}
   <ul class="nav nav-pills nav-flush flex-column mb-auto text-center text-decoration-none">
     <li class="nav-item">
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Nutrition" data-bs-original-title="Nutrition">
+      <a href="/nutrition" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Nutrition" data-bs-original-title="Nutrition">
         <i class="fa-solid fa-carrot" width="24" height="24" aria-label="Nutrition"></i>
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Fitness" data-bs-original-title="Fitness">
+      <a href="/fitness" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Fitness" data-bs-original-title="Fitness">
         <i class="fa-solid fa-dumbbell" width="24" height="24" aria-label="Fitness"></i>
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0 text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Healthy" data-bs-original-title="Healthy">
+      <a href="/lifestyle" class="nav-link py-3 border-bottom rounded-0 text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Healthy" data-bs-original-title="Healthy">
         <i class="fa-solid fa-heart" width="24" height="24" aria-label="Healthy"></i>
       </a>
     </li>
-    {{#user}}
     <li>
-      <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Goals" data-bs-original-title="Goals">
+      <a href="/goals" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Goals" data-bs-original-title="Goals">
         <i class="fa-solid fa-clipboard" width="24" height="24" aria-label="Goals"></i>
       </a>
     </li>
-    {{/user}}
   </ul>
-
+  {{/user}}
 
   {{#user}}
   <div class="dropdown border-top">

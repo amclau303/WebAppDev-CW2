@@ -48,3 +48,28 @@ exports.user_page = function (req, res) {
 exports.logout = function (req, res) {
   res.clearCookie("jwt").status(200).redirect("/");
 };
+
+
+exports.fitness_page = function (req, res) {
+  res.render("fitness", {
+    user:"user",
+  });
+};
+
+exports.lifestyle_page = function (req, res) {
+  res.render("lifestyle", {
+    user:"user",
+  });
+};
+
+exports.nutrition_page = function (req, res) {
+  res.render("nutrition", {
+    user:"user",
+  });
+};
+
+exports.goals_page = function (req, res) {
+  res.render("goals", {
+    user:"user",
+  });
+};
