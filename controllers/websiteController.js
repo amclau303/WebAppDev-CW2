@@ -1,3 +1,5 @@
+const UserDAO = require('../models/userModel.js'); 
+
 exports.index_page = function (req, res) {
     res.render("index");
 }
@@ -19,7 +21,7 @@ exports.post_new_user = function (req, res) {
         return;
     }
 
-    userDAO.lookup(user, function(err, u) {
+    UserDAO.lookup(user, function(err, u) {
         if (u) {
             res.send(401, "User exists", user);
             return;
