@@ -4,6 +4,53 @@
   </head>
   <body>
     {{>navbar}}
-    <h1>This is the Home Page</h1>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active carousel-item-start">
+          <img src="../img/healthy.jpg" width="100%" height="851px">
+  
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Health and Wellbeing Application</h1>
+              <p>View information about a healthy Lifestyle.</p>
+              <p><a class="btn btn-lg btn-primary" href="/lifestyle">Lifestyle</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item carousel-item-next carousel-item-start">
+          <img src="../img/sports.jpg" width="100%" height="851px">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Health and Wellbeing Application</h1>
+              <p>View information about Fitness</p>
+              <p><a class="btn btn-lg btn-primary" href="/fitness">Fitness</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../img/food.jpg" width="100%" height="851px">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Health and Wellbeing Application</h1>
+              <p>View information about Nutrition</p>
+              <p><a class="btn btn-lg btn-primary" href="/nutrition">Nutrition</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </body>
 </html>
