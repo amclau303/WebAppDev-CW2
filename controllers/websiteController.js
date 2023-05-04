@@ -33,7 +33,7 @@ exports.post_new_user = function (req, res) {
 }
 
 exports.handle_login = function (req, res) {
-    res.render("newEntry", {
+    res.render("home", {
         user:"user"
     });
 }
