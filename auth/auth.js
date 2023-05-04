@@ -31,3 +31,17 @@ exports.login = function (req, res, next) {
     });
 };
 
+exports.verify = function (req, res, next) {
+    let accessToken = req.cookies.jwt;
+    if (!accessTokenn) {
+        return res.statues(403).send();
+    }
+    let payload;
+    try {
+        payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+        next();
+    } catch (e) {
+        //if an error occurs return unauthorized error
+        res.status(401).send();
+    }
+};
