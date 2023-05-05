@@ -10,11 +10,11 @@
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Title:</label>
               <form method="POST" action="/update">
-              <textarea class="form-control" id="name" name="name">{{name}}</textarea>
+              <textarea class="form-control" id="name" name="name" placeholder="{{name}}"></textarea>
             </div>
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="description" name="description">{{description}}</textarea>
+              <textarea class="form-control" id="description" name="description" placeholder="{{description}}"></textarea>
             </div>
             <div class="mb-3">
                 <div class="dropdown">
@@ -23,15 +23,15 @@
                   </button>
                   <ul class="dropdown-menu">
                     <li class="list-group-item ms-2">
-                      <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="type">
+                      <input class="form-check-input me-1" type="radio" name="type" value="Fitness" id="type">
                       <label class="form-check-label" for="Fitness" id="type" name="Fitness">Fitness</label>
                     </li> 
                     <li class="list-group-item ms-2">
-                      <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="type">
+                      <input class="form-check-input me-1" type="radio" name="type" value="Nutrition" id="type">
                       <label class="form-check-label" for="Nutrition" id="type" name="Nutrition">Nutrition</label>
                     </li>
                     <li class="list-group-item ms-2">    
-                      <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="type">
+                      <input class="form-check-input me-1" type="radio" name="type" value="Lifestyle" id="type">
                       <label class="form-check-label" for="Lifestyle" id="type" name="Lifestyle">Lifestyle</label></li>
                   </ul>
                 </div>
@@ -40,7 +40,7 @@
         
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-primary" value="Update">
+          <input type="submit" class="btn btn-primary" value="update">
           
         </form>
         </div>

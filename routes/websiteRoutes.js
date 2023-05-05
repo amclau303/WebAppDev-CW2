@@ -23,6 +23,8 @@ router.get("/nutrition", verify, controller.nutrition_page);
 router.get("/goals", verify, controller.goals_page);
 
 router.post("/add", verify, controller.post_new_entry);
+
+router.get("/goals/:id", verify, controller.edit_model);
 router.post("/update", verify, controller.update_goal);
 
 module.exports = router;

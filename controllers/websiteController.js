@@ -98,21 +98,25 @@ exports.goals_page = function (req, res) {
 };
 
 exports.post_new_entry = function (req, res) {
-  console.log('Creating new post entry request');
-  if(!req.body.name || !req.body.description) {
+  console.log("Creating new post entry request");
+  if (!req.body.name || !req.body.description) {
     console.log("Error adding document");
     return;
   }
   goalDAO.addGoal(req.body.name, req.body.description, req.body.type);
   res.redirect("/goals");
+};
+
+exports.edit_model = function (req, res) {
+  const id = req.params.id;
+  goalDAO.findGoalByID(id).then((entries) => {
+    console.log(entries);
+    res.render("edit", {goal:entries,})
+  });
 }
 
 exports.update_goal = function (req, res) {
-  console.log('Updating entry post request');
-  if(!req.body.name || req.body.description){
-    console.log("Requires name/description");
-    return;
-  }
-  goalDAO.updateGoal(req.body.name, req.body.description, req.body.type);
+  const id = req.params.id;
+  goalDAO.updateGoal(id, req.body.name, req.body.description, req.body.type);
   res.redirect("/goals");
-}
+};
