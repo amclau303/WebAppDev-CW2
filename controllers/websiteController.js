@@ -5,7 +5,7 @@ fitnessDAO.init();
 const NutritionData = require("../models/nutritionModel.js");
 const nutritionDAO = new NutritionData();
 nutritionDAO.init();
-const lifestyleData = require("../models/lifestyleModel.js");
+const LifestyleData = require("../models/lifestyleModel.js");
 const lifestyleDAO = new LifestyleData();
 lifestyleDAO.init();
 
@@ -69,7 +69,7 @@ exports.fitness_page = function (req, res) {
 };
 
 exports.lifestyle_page = function (req, res) {
-  fitnessDAO.getAllEntries().then((list) => {
+  lifestyleDAO.getAllEntries().then((list) => {
     res.render("lifestyle", {
       user:"user",
       lifestyles: list,
