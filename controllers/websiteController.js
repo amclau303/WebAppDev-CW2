@@ -8,6 +8,9 @@ nutritionDAO.init();
 const LifestyleData = require("../models/lifestyleModel.js");
 const lifestyleDAO = new LifestyleData();
 lifestyleDAO.init();
+const GoalData = require("../models/goalModel.js");
+const goalDAO = new GoalData();
+goalDAO.init();
 
 exports.index_page = function (req, res) {
   res.render("index");
@@ -88,7 +91,11 @@ exports.nutrition_page = function (req, res) {
 };
 
 exports.goals_page = function (req, res) {
-  res.render("goals", {
-    user:"user",
-  });
+  goalDAO.getAllEntries().then((list) => {
+    res.render("goals", {
+      user:"user",
+      goals:list,
+    }, 
+    );
+  })
 };
