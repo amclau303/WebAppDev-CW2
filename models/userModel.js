@@ -13,7 +13,7 @@ class UserDAO {
   init() {
     this.db.insert({
       user: "admin",
-      password: "admin",
+      password: "$2a$12$.hZShaLcrj/2o4bWb11g4uG0anpLZWYrCR54kQGhiXN7O4kc0T9z.",
     });
     return this;
   }
