@@ -10,14 +10,13 @@
           <form>
             <div class="mb-3">
                 
-              <label for="recipient-name" class="col-form-label">Recipient:</label>
+              <label for="recipient-name" class="col-form-label">Title:</label>
               <form method="POST" action="/update">
-
-              <textarea class="form-control" id="message-text">{{name}}</textarea>
+              <textarea class="form-control" id="nameID" name="nameID">{{name}}</textarea>
             </div>
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text">{{description}}</textarea>
+              <textarea class="form-control" id="descriptionsID" name="descriptionID">{{description}}</textarea>
             
             </div>
           

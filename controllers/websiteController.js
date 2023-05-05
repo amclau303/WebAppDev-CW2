@@ -61,41 +61,47 @@ exports.logout = function (req, res) {
   res.clearCookie("jwt").status(200).redirect("/");
 };
 
-
 exports.fitness_page = function (req, res) {
   fitnessDAO.getAllEntries().then((list) => {
     res.render("fitness", {
-      user:"user",
+      user: "user",
       exercises: list,
     });
-  })
+  });
 };
 
 exports.lifestyle_page = function (req, res) {
   lifestyleDAO.getAllEntries().then((list) => {
     res.render("lifestyle", {
-      user:"user",
+      user: "user",
       lifestyles: list,
     });
-  })
+  });
 };
 
 exports.nutrition_page = function (req, res) {
   nutritionDAO.getAllEntries().then((list) => {
     res.render("nutrition", {
-      user:"user",
-      nutritions:list,
-    }, 
-    );
-  })
+      user: "user",
+      nutritions: list,
+    });
+  });
 };
 
 exports.goals_page = function (req, res) {
   goalDAO.getAllEntries().then((list) => {
     res.render("goals", {
-      user:"user",
-      goals:list,
-    }, 
-    );
-  })
+      user: "user",
+      goals: list,
+    });
+  });
+};
+
+exports.update_goal = function (req, res) {
+  goalDAO.updateEntry().then((list) => {
+    res.render("goals", {
+      user: "user",
+      goals: list,
+    });
+  });
 };
