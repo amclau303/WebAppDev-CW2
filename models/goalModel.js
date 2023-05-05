@@ -12,8 +12,18 @@ class GoalData {
     this.db.insert({
         name: 'Example1',
         description: 'Example1Example1Example1Example1Example1Example1Example1Example1Example1',
-        type: 'Example1Example1',
+        type: 'Fitness',
     });
+    this.db.insert({
+      name: 'Example2',
+      description: 'Example2Example2Example2Example2Example2Example2Example2Example2Example2Example2',
+      type: 'Nutrition',
+  });
+  this.db.insert({
+    name: 'Example3',
+    description: 'Example3Example3Example3Example3Example3Example3Example3Example3Example3',
+    type: 'Lifestyle',
+});
     return this;
   }
 
@@ -30,5 +40,6 @@ class GoalData {
     });
    }
 }
+
 
 module.exports = GoalData;

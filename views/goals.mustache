@@ -8,8 +8,8 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto text-white">
-            <h1 class="fw-light">Fitness</h1>
-            <p class="lead text-body-white">Fitness is an important factor of physical health. This section will describe various types of exercise you can engage in, as well as the benefits involved for each.</p>
+            <h1 class="fw-light">Goal Tracker</h1>
+            <p class="lead text-body-white">This Goal Tracker is designed to track your progress in three categories: Fitness, Nutrition and Lifestyle.</p>
           </div>
         </div>
       </section>
@@ -28,8 +28,9 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#{{name}}" data-bs-whatever="@mdo">Edit</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                      {{>goalModal}}
                     </div>
                     <h2>{{name}}</h2>
                   </div>
