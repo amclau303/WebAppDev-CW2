@@ -41,4 +41,5 @@ class NutritionData {
    }
 }
 
+
 module.exports = NutritionData;

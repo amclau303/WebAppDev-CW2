@@ -41,4 +41,5 @@ class LifestyleData {
    }
 }
 
+
 module.exports = LifestyleData;

@@ -41,4 +41,5 @@ class FitnessData {
    }
 }
 
+
 module.exports = FitnessData;
