@@ -1,16 +1,9 @@
 const UserDAO = require("../models/userModel.js");
 const FitnessData = require("../models/fitnessModel.js");
-const fitnessDAO = new FitnessData();
-fitnessDAO.init();
 const NutritionData = require("../models/nutritionModel.js");
-const nutritionDAO = new NutritionData();
-nutritionDAO.init();
 const LifestyleData = require("../models/lifestyleModel.js");
-const lifestyleDAO = new LifestyleData();
-lifestyleDAO.init();
 const GoalData = require("../models/goalModel.js");
-const goalDAO = new GoalData();
-goalDAO.init();
+
 
 exports.index_page = function (req, res) {
   res.render("index");
