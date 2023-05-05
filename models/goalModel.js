@@ -15,18 +15,21 @@ class GoalData {
       description:
         "Example1Example1Example1Example1Example1Example1Example1Example1Example1",
       type: "Fitness",
+
     });
     this.db.insert({
       name: "Example2",
       description:
         "Example2Example2Example2Example2Example2Example2Example2Example2Example2Example2",
       type: "Nutrition",
+
     });
     this.db.insert({
       name: "Example3",
       description:
         "Example3Example3Example3Example3Example3Example3Example3Example3Example3",
       type: "Lifestyle",
+   
     });
     return this;
   }
@@ -44,23 +47,39 @@ class GoalData {
     });
   }
 
-  updateEntry(id, name, description) {
-    return new Promise((resolve, reject) => {
-      this.db.update(
-        { _id: id },
-        { $set: { name: name, description: description } },
-        {},
-        function (err, docs) {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(docs);
-            console.log("Document updated");
-          }
-        }
-      );
+  addGoal(name, description, type) {
+    var entry = {
+      name: name,
+      description: description,
+      type: type,
+      published: new Date().toISOString().split('T')[0]
+    }
+    console.log('Entry Create', entry);
+    this.db.insert(entry, function(err, doc) {
+      if (err) {
+        console.log('Error inserting document', subject);
+      } else {
+        console.log('Document inserted into databse', doc);
+      }
     });
   }
+
+  updateGoal (name, description, type) {
+    var entry = {
+      name: name,
+      description: description,
+      type: type,
+    }
+    console.log('Update entry: ', entry);
+    this.db.update(entry, function(err, doc) {
+      if (err) {
+        console.log('Error updating document:', subject);
+      } else {
+        console.log('Document updated into database', doc);
+      }
+    });
+  }
+
 }
 
 module.exports = GoalData;
