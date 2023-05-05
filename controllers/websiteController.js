@@ -1,8 +1,13 @@
 const UserDAO = require("../models/userModel.js");
-
 const FitnessData = require("../models/fitnessModel.js");
 const fitnessDAO = new FitnessData();
 fitnessDAO.init();
+const NutritionData = require("../models/nutritionModel.js");
+const nutritionDAO = new NutritionData();
+nutritionDAO.init();
+const lifestyleData = require("../models/lifestyleModel.js");
+const lifestyleDAO = new LifestyleData();
+lifestyleDAO.init();
 
 exports.index_page = function (req, res) {
   res.render("index");
@@ -64,17 +69,22 @@ exports.fitness_page = function (req, res) {
 };
 
 exports.lifestyle_page = function (req, res) {
-  res.render("lifestyle", {
-    user:"user",
-  });
+  fitnessDAO.getAllEntries().then((list) => {
+    res.render("lifestyle", {
+      user:"user",
+      lifestyles: list,
+    });
+  })
 };
 
 exports.nutrition_page = function (req, res) {
-  res.render("nutrition", {
-    user:"user",
-  }, 
-  
-  );
+  nutritionDAO.getAllEntries().then((list) => {
+    res.render("nutrition", {
+      user:"user",
+      nutritions:list,
+    }, 
+    );
+  })
 };
 
 exports.goals_page = function (req, res) {
