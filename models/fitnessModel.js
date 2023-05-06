@@ -28,6 +28,7 @@ class FitnessData {
     return this;
   }
 
+  //Gets all Fitness DB entries
   getAllEntries() {
     return new Promise((resolve, reject) => {
         this.db.find({}, function(err, exercises) {

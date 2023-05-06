@@ -28,6 +28,7 @@ class LifestyleData {
     return this;
   }
 
+  //Gets all Lifestyle DB entries
   getAllEntries() {
     return new Promise((resolve, reject) => {
         this.db.find({}, function(err, lifestyles) {
