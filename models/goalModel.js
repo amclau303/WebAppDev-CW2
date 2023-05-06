@@ -82,9 +82,9 @@ class GoalData {
   }
 
   //Updates Goal by ID
-  updateGoal(id, name, description, type) {
+  updateGoal(id, name, description, type, published) {
     return new Promise ((resolve, reject) => {
-      this.db.update({"_id": id}, {"name": name, "description":description, "type":type}, {}, function (err, entries) {
+      this.db.update({"_id": id}, {"name": name, "description":description, "type":type, "published": new Date().toISOString().split("T")[0],}, {}, function (err, entries) {
         if (err) {
           reject(err);
         } else {

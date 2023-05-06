@@ -139,7 +139,7 @@ exports.update_goal = function (req, res) {
   if(!req.body.name || !req.body.description){
     res.status(400).send("No name/description");
   }
-  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.published);
+  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type, req.body.published);
   res.redirect("/goals");
 }
 

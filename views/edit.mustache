@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="name" class="form-label">Title</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="{{name}}">{{name}}</input>
+                        <textarea type="text" class="form-control" name="name" id="name" placeholder="{{name}}">{{name}}</textarea>
                       </div>
                       <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
@@ -55,7 +55,7 @@
                       
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <input class="form-control edit-published  " id="published" placeholder="Published: {{published}}" disabled></input>
+                        <textarea class="form-control edit-published" id="published" rows="1" name="published" id="published" disabled>Published: {{published}}</textarea>
                     </div>
                     <a class="btn btn-danger" href="/delete/{{_id}}">Delete</a>
                     <input class="btn btn-primary" type="submit" value="Update"></input>
