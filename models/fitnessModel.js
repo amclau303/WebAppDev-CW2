@@ -8,6 +8,7 @@ class FitnessData {
       this.db = new fitnessDB();
     }
   }
+   //Initialize Database and insert examples
   init() {
     this.db.insert({
         name: 'Cardio',

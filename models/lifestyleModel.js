@@ -8,6 +8,7 @@ class LifestyleData {
       this.db = new lifestyleDB();
     }
   }
+   //Initialize Database and insert examples
   init() {
     this.db.insert({
         name: 'Exercise',

@@ -8,6 +8,7 @@ class NutritionData {
       this.db = new nutritionDB();
     }
   }
+   //Initialize Database and insert examples
   init() {
     this.db.insert({
         name: 'Mediterranean',
