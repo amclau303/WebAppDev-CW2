@@ -110,15 +110,15 @@ exports.post_new_entry = function (req, res) {
 exports.edit_model = function (req, res) {
   console.log("ID: ", req.params.id)
   const id = req.params.id;
+  console.log("Name:", req.body.name, " Description:", req.body.description)
   goalDAO.findGoalByID(id).then((entries) => {
     console.log(entries);
     res.render("goals", {
       user:"user",
       goals: entries,
-      
     });
-    goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type);
   });
+  goalDAO.updateGoal(req.params.id, );
 }
 
 exports.update_goal = function (req, res) {
@@ -127,6 +127,5 @@ exports.update_goal = function (req, res) {
       res.send(400, "No name/description selected");
       return;
     }
-    goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type);
     res.redirect("/goals");
 };
