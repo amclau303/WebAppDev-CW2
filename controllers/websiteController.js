@@ -108,15 +108,25 @@ exports.post_new_entry = function (req, res) {
 };
 
 exports.edit_model = function (req, res) {
+  console.log("ID: ", req.params.id)
   const id = req.params.id;
   goalDAO.findGoalByID(id).then((entries) => {
     console.log(entries);
-    res.render("edit", {goal:entries,})
+    res.render("goals", {
+      user:"user",
+      goals: entries,
+      
+    });
+    goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type);
   });
 }
 
 exports.update_goal = function (req, res) {
-  const id = req.params.id;
-  goalDAO.updateGoal(id, req.body.name, req.body.description, req.body.type);
-  res.redirect("/goals");
+    console.log("updating goal");
+    if (!req.body.name || !req.body.description) {
+      res.send(400, "No name/description selected");
+      return;
+    }
+    goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type);
+    res.redirect("/goals");
 };

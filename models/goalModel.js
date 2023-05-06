@@ -65,42 +65,34 @@ class GoalData {
   }
 
   findGoalByID(id) {
-    return new Promise ((resolve, reject) => {
-      this.db.find({_id:id}, function(err, entries) {
+    return new Promise((resolve, reject) => {
+      this.db.findOne({ _id: id }, function (err, entries) {
         if (err) {
-          reject(err)
+          reject(err);
         } else {
           resolve(entries);
-          console.log("Found ID: ", entries)
+          console.log("Found ID: ", entries);
         }
-      })
-    })
+      });
+    });
   }
 
   updateGoal(id, name, description, type) {
-    
-    this.db.find({_id:id}, function(err, entries) {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(entries);
-        console.log("Found ID: ", entries)
-      }
-    })
-
-    this.db.update(
-      { "_id": id },
-      { $set: { "name": name, "description":description, "type": type } },
-      {},
-      
-      function (err, doc) {
-        if (err) {
-          console.log("Error updating document:", subject);
-        } else {
-          console.log("Document updated into database", doc);
+    return new Promise((resolve, reject) => {
+      this.db.update(
+        { "_id": id },
+        { $set: { 'name': name, 'description': description, 'type':type} },
+        {},
+        function (err, entries) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(entries);
+            console.log("Document updated into database", entries);
+          }
         }
-      }
-    );
+      );
+    });
   }
 }
 

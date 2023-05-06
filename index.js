@@ -17,6 +17,7 @@ const nedb = require("nedb");
 const router = require("./routes/websiteRoutes");
 app.use("/", router);
 
+
 app.listen(3000, () => {
   console.log("Server started on port 3000. Ctrl^c to quit.");
 });
