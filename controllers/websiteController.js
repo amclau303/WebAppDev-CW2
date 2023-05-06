@@ -110,7 +110,7 @@ exports.post_new_entry = function (req, res) {
 exports.edit_model = function (req, res) {
   console.log("ID: ", req.params.id)
   const id = req.params.id;
-  console.log("Name:", req.body.name, " Description:", req.body.description)
+  console.log("Name:", req.body.name, " Description:", req.body.description, "Type:", req.body.type)
   goalDAO.findGoalByID(id).then((entries) => {
     console.log(entries);
     res.render("goals", {
@@ -118,7 +118,7 @@ exports.edit_model = function (req, res) {
       goals: entries,
     });
   });
-  goalDAO.updateGoal(req.params.id, );
+  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type );
 }
 
 exports.update_goal = function (req, res) {
@@ -129,3 +129,8 @@ exports.update_goal = function (req, res) {
     }
     res.redirect("/goals");
 };
+
+exports.remove_goal = function (req, res) {
+  console.log("Removing Goal");
+
+}

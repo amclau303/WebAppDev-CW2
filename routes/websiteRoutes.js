@@ -18,5 +18,6 @@ router.get("/goals", verify, controller.goals_page);
 router.post("/add", verify, controller.post_new_entry);
 router.get("/goals/:id", verify, controller.edit_model);
 router.post("/update", verify, controller.update_goal);
+router.post("/remove", verify, controller.remove_goal);
 
 module.exports = router;
