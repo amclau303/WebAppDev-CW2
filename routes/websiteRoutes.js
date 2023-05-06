@@ -18,7 +18,6 @@ router.get("/goals", verify, controller.goals_page);
 router.post("/add", verify, controller.post_new_entry);
 router.get("/edit/:id", verify, controller.edit_model);
 router.post("/edit/:id", verify, controller.update_goal);
-
 router.get("/delete/:id", verify, controller.remove_confirm);
 router.post("/delete/:id", verify, controller.remove_goal);
 
