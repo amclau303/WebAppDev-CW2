@@ -10,7 +10,7 @@
         <div class="modal-body">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Title:</label>
-              <form method="POST">
+              <form method="POST" action="/delete" id="update">
               <textarea class="form-control" id="name" name="name" rows="1" disabled>{{name}}</textarea>
             </div>
             <div class="mb-3">
@@ -20,10 +20,6 @@
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Type:</label>
               <textarea class="form-control" id="type" name="type" rows="1" disabled>{{type}}</textarea>
-            </div>
-            <div class="mb-3">
-              <label for="message-text" class="col-form-label">Published:</label>
-              <textarea class="form-control" id="published" name="published" rows="1" disabled>{{published}}</textarea>
             </div>
         </div>
         

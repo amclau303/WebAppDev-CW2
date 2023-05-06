@@ -28,6 +28,7 @@ class NutritionData {
     return this;
   }
 
+  //Gets all nutrition DB entries
   getAllEntries() {
     return new Promise((resolve, reject) => {
         this.db.find({}, function(err, nutritions) {

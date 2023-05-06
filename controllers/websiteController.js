@@ -129,6 +129,7 @@ exports.edit_model = function (req, res) {
       user:"user",
       goals: entries,
     });
+
   });
 }
 
@@ -138,11 +139,24 @@ exports.update_goal = function (req, res) {
   if(!req.body.name || !req.body.description){
     res.status(400).send("No name/description");
   }
-  goalDAO.updateGoal(req.body.id, req.body.name, req.body.description, req.body.published);
+  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.published);
+  res.redirect("/goals");
 }
 
+
+exports.remove_confirm = function (req, res) {
+  const id = req.params.id;
+  goalDAO.findGoalByID(id).then((entries) => {
+    console.log(entries);
+    res.render("delete", {
+      user:"user",
+      goals: entries,
+    });
+  });
+}
 //Post request to remove goal
 exports.remove_goal = function (req, res) {
   console.log("Removing Goal");
   goalDAO.removeGoal(req.params.id);
+  res.redirect("/goals");
 }
