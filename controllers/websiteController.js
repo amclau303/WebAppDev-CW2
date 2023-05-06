@@ -108,29 +108,27 @@ exports.post_new_entry = function (req, res) {
 };
 
 exports.edit_model = function (req, res) {
-  console.log("ID: ", req.params.id)
   const id = req.params.id;
+  console.log("ID: ", req.params.id)
   console.log("Name:", req.body.name, " Description:", req.body.description, "Type:", req.body.type)
   goalDAO.findGoalByID(id).then((entries) => {
     console.log(entries);
-    res.render("goals", {
+    res.render("edit", {
       user:"user",
       goals: entries,
     });
   });
-  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type );
 }
 
 exports.update_goal = function (req, res) {
-    console.log("updating goal");
-    if (!req.body.name || !req.body.description) {
-      res.send(400, "No name/description selected");
-      return;
-    }
-    res.redirect("/goals");
-};
+  console.log("Updating:", req);
+  if(!req.body.name || !req.body.description){
+    res.status(400).send("No name/description");
+  }
+  goalDAO.updateGoal(req.body.id, req.body.name, req.body.description, req.body.published);
+}
 
 exports.remove_goal = function (req, res) {
   console.log("Removing Goal");
-
+  goalDAO.removeGoal(req.params.id);
 }

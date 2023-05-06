@@ -10,39 +10,26 @@
         <div class="modal-body">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Title:</label>
-              <form method="POST" action="/update" id="update">
-              <textarea class="form-control" id="name" name="name" placeholder="{{name}}"></textarea>
+              <form method="POST" action="/delete" id="update">
+              <textarea class="form-control" id="name" name="name" rows="1" disabled>{{name}}</textarea>
             </div>
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Description:</label>
-              <textarea class="form-control" id="description" name="description" placeholder="{{description}}"></textarea>
+              <textarea class="form-control" id="description" name="description" rows="4" disabled>{{description}}</textarea>
             </div>
             <div class="mb-3">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Type
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li class="list-group-item ms-2">
-                      <input class="form-check-input me-1" type="radio" name="type" value="Fitness" id="type">
-                      <label class="form-check-label" for="Fitness" id="type" name="Fitness">Fitness</label>
-                    </li> 
-                    <li class="list-group-item ms-2">
-                      <input class="form-check-input me-1" type="radio" name="type" value="Nutrition" id="type">
-                      <label class="form-check-label" for="Nutrition" id="type" name="Nutrition">Nutrition</label>
-                    </li>
-                    <li class="list-group-item ms-2">    
-                      <input class="form-check-input me-1" type="radio" name="type" value="Lifestyle" id="type">
-                      <label class="form-check-label" for="Lifestyle" id="type" name="Lifestyle">Lifestyle</label></li>
-                  </ul>
-                </div>
-              </div>
+              <label for="message-text" class="col-form-label">Type:</label>
+              <textarea class="form-control" id="type" name="type" rows="1" disabled>{{type}}</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Published:</label>
+              <textarea class="form-control" id="published" name="published" rows="1" disabled>{{published}}</textarea>
+            </div>
         </div>
         
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-primary" value="update" id="update">
-          
+          <input type="submit" class="btn btn-secondary" data-bs-dismiss="modal" value="Delete">
         </form>
         </div>
 

@@ -16,8 +16,8 @@ router.get("/lifestyle", verify, controller.lifestyle_page);
 router.get("/nutrition", verify, controller.nutrition_page);
 router.get("/goals", verify, controller.goals_page);
 router.post("/add", verify, controller.post_new_entry);
-router.get("/goals/:id", verify, controller.edit_model);
+router.get("/edit/:id", verify, controller.edit_model);
 router.post("/update", verify, controller.update_goal);
-router.post("/remove", verify, controller.remove_goal);
+router.post("/delete", verify, controller.remove_goal);
 
 module.exports = router;

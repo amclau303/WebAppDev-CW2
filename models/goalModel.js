@@ -59,7 +59,7 @@ class GoalData {
       if (err) {
         console.log("Error inserting document", subject);
       } else {
-        console.log("Document inserted into databse", doc);
+        console.log("Document inserted into database", doc);
       }
     });
   }
@@ -78,21 +78,26 @@ class GoalData {
   }
 
   updateGoal(id, name, description, type) {
-    return new Promise((resolve, reject) => {
-      this.db.update(
-        { "_id": id },
-        { $set: { 'name': name, 'description': description, 'type':type} },
-        {},
-        function (err, entries) {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(entries);
-            console.log("Document updated into database", entries);
-          }
+    return new Promise ((resolve, reject) => {
+      this.db.update({"_id": id}, {"name": name, "description":description, "type":type}, {}, function (err, entries) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(entries);
+          console.log(entries, entries, "Updated");
         }
-      );
+      });
     });
+  }
+
+  removeGoal(id) {
+      this.db.remove({_id:id}, {}, function (err, docs) {
+        if (err){
+          reject(err);
+        } else {
+          console.log(docs, "removed");
+        }
+    })
   }
 }
 
