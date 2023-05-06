@@ -9,6 +9,7 @@ class GoalData {
       this.db = new goalDB();
     }
   }
+  //Initialize Database and insert examples
   init() {
     this.db.insert({
       name: "Example1",
@@ -34,6 +35,7 @@ class GoalData {
     return this;
   }
 
+  //Gets all Goals in DB
   getAllEntries() {
     return new Promise((resolve, reject) => {
       this.db.find({}, function (err, goals) {
@@ -47,6 +49,7 @@ class GoalData {
     });
   }
 
+  // Add Goal function
   addGoal(name, description, type) {
     var entry = {
       name: name,
@@ -64,6 +67,7 @@ class GoalData {
     });
   }
 
+  //Finds specific Goal by ID
   findGoalByID(id) {
     return new Promise((resolve, reject) => {
       this.db.findOne({ _id: id }, function (err, entries) {
@@ -77,6 +81,7 @@ class GoalData {
     });
   }
 
+  //Updates Goal by ID
   updateGoal(id, name, description, type) {
     return new Promise ((resolve, reject) => {
       this.db.update({"_id": id}, {"name": name, "description":description, "type":type}, {}, function (err, entries) {
@@ -90,6 +95,7 @@ class GoalData {
     });
   }
 
+  //Removes goal by ID
   removeGoal(id) {
       this.db.remove({_id:id}, {}, function (err, docs) {
         if (err){

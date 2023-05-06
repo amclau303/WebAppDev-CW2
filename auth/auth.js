@@ -7,6 +7,7 @@ exports.login = function (req, res, next) {
     let username = req.body.username;
     let password = req.body.password;
 
+    // Looks up username and checks if it exists.
     userModel.lookup(username, function (err, user) {
         if(err) {
             console.log("Error looking up user", err);
@@ -32,6 +33,7 @@ exports.login = function (req, res, next) {
     });
 };
 
+    //Verify function to specify access on certain web pages
 exports.verify = function (req, res, next) {
     let accessToken = req.cookies.jwt;
     if (!accessToken) {

@@ -10,6 +10,7 @@ class UserDAO {
       this.db = new Datastore();
     }
   }
+   //Initialize Database and admin example
   init() {
     this.db.insert({
       user: "admin",
@@ -17,6 +18,7 @@ class UserDAO {
     });
     return this;
   }
+  // Function to register a new account
   create(username, password) {
     const that = this;
     bcrypt.hash(password, saltRounds).then(function (hash) {
@@ -28,6 +30,8 @@ class UserDAO {
       });
     });
   }
+
+  // Looks up existing user account
   lookup(user, cb) {
     this.db.find({ user: user }, function (err, entries) {
       if (err) {
