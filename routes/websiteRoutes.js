@@ -15,7 +15,7 @@ router.get("/fitness", verify, controller.fitness_page);
 router.get("/lifestyle", verify, controller.lifestyle_page);
 router.get("/nutrition", verify, controller.nutrition_page);
 router.get("/goals", verify, controller.goals_page);
-router.get("/finished", verify, controller.goals_page_finished);
+router.get("/achievements", verify, controller.achievements_page);
 router.post("/add", verify, controller.post_new_entry);
 router.get("/edit/:id", verify, controller.edit_model);
 router.post("/edit/:id", verify, controller.update_goal);

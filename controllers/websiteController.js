@@ -109,12 +109,11 @@ exports.goals_page = function (req, res) {
 };
 
 //Displays goals page with goalsDB list
-exports.goals_page_finished = function (req, res) {
+exports.achievements_page = function (req, res) {
   goalDAO.getAllEntries().then((list) => {
-    res.render("goals", {
+    res.render("achievements", {
       user: "user",
       goals: list,
-      finished:"yes",
     });
   });
 };
