@@ -134,6 +134,7 @@ exports.edit_model = function (req, res) {
   const id = req.params.id;
   console.log("ID: ", req.params.id)
   console.log("Name:", req.body.name, " Description:", req.body.description, "Type:", req.body.type)
+  console.log("finished:",req.body.finished)
   goalDAO.findGoalByID(id).then((entries) => {
     console.log(entries);
     res.render("edit", {
@@ -147,10 +148,11 @@ exports.edit_model = function (req, res) {
 //Post request to update goal
 exports.update_goal = function (req, res) {
   console.log("Updating:", req.params.id);
+  console.log(req.body.finished)
   if(!req.body.name || !req.body.description || !req.body.type || !req.body.finished){
     res.status(400).send("No name/description");
   }
-  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type, req.body.published, req.body.finished);
+  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type, req.body.finished, req.body.published, );
   res.redirect("/goals");
 }
 

@@ -10,30 +10,34 @@ class GoalData {
     }
   }
   //Initialize Database and insert examples
-  init() {
+  init() { 
+
+    const published = new Date().toISOString().split("T")[0];
+    
+
     this.db.insert({
       name: "Example1",
       description:
         "Example1Example1Example1Example1Example1Example1Example1Example1Example1",
       type: "Fitness",
-      published: new Date().toISOString().split("T")[0],
-      finished:false
+      published,
+      finished:false,
     });
     this.db.insert({
       name: "Example2",
       description:
         "Example2Example2Example2Example2Example2Example2Example2Example2Example2Example2",
       type: "Nutrition",
-      published: new Date().toISOString().split("T")[0],
-      finished:true
+      published,
+      finished:true,
     });
     this.db.insert({
       name: "Example3",
       description:
         "Example3Example3Example3Example3Example3Example3Example3Example3Example3",
       type: "Lifestyle",
-      published: new Date().toISOString().split("T")[0],
-      finished:false
+      published,
+      finished:false,
     });
     return this;
   }
@@ -59,6 +63,7 @@ class GoalData {
       description: description,
       type: type,
       published: new Date().toISOString().split("T")[0],
+      finished: false,
     };
     console.log("Entry Create", entry);
     this.db.insert(entry, function (err, doc) {
@@ -87,7 +92,7 @@ class GoalData {
   //Updates Goal by ID
   updateGoal(id, name, description, type, finished) {
     return new Promise ((resolve, reject) => {
-      this.db.update({"_id": id}, {"name": name, "description":description, "type":type, "published": new Date().toISOString().split("T")[0], "finished":finished}, {}, function (err, entries) {
+      this.db.update({"_id": id}, {"name": name, "description":description, "type":type, "finished": finished === 'true' ? true : false, "published": new Date().toISOString().split("T")[0], }, {}, function (err, entries) {
         if (err) {
           reject(err);
         } else {
