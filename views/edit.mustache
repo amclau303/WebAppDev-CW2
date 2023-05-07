@@ -49,10 +49,22 @@
                               <input class="form-check-input me-1" type="radio" name="type" value="Lifestyle" id="type">
                               <label class="form-check-label" for="Lifestyle" >Lifestyle</label></li>
                           </ul>
+                          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Finished?
+                          </button>
+                          <ul class="dropdown-menu btn-warning" required name="type">
+                            <li class="list-group-item ms-2">
+                              <input class="form-check-input me-1" type="radio" name="finished" value="True" id="finished">
+                              <label class="form-check-label" for="True" >True</label>
+                            </li> 
+                            <li class="list-group-item ms-2">
+                              <input class="form-check-input me-1" type="radio" name="finished" value="False" id="finished">
+                              <label class="form-check-label" for="False" >False</label>
+                            </li>
+                          </ul>
                         </div>
                         
                       </div>
-                      
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <textarea class="form-control edit-published" id="published" rows="1" name="published" id="published" disabled>Published: {{published}}</textarea>

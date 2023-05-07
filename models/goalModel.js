@@ -17,6 +17,7 @@ class GoalData {
         "Example1Example1Example1Example1Example1Example1Example1Example1Example1",
       type: "Fitness",
       published: new Date().toISOString().split("T")[0],
+      finished:false
     });
     this.db.insert({
       name: "Example2",
@@ -24,6 +25,7 @@ class GoalData {
         "Example2Example2Example2Example2Example2Example2Example2Example2Example2Example2",
       type: "Nutrition",
       published: new Date().toISOString().split("T")[0],
+      finished:true
     });
     this.db.insert({
       name: "Example3",
@@ -31,6 +33,7 @@ class GoalData {
         "Example3Example3Example3Example3Example3Example3Example3Example3Example3",
       type: "Lifestyle",
       published: new Date().toISOString().split("T")[0],
+      finished:false
     });
     return this;
   }
@@ -82,9 +85,9 @@ class GoalData {
   }
 
   //Updates Goal by ID
-  updateGoal(id, name, description, type, published) {
+  updateGoal(id, name, description, type, finished) {
     return new Promise ((resolve, reject) => {
-      this.db.update({"_id": id}, {"name": name, "description":description, "type":type, "published": new Date().toISOString().split("T")[0],}, {}, function (err, entries) {
+      this.db.update({"_id": id}, {"name": name, "description":description, "type":type, "published": new Date().toISOString().split("T")[0], "finished":finished}, {}, function (err, entries) {
         if (err) {
           reject(err);
         } else {

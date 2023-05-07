@@ -103,6 +103,18 @@ exports.goals_page = function (req, res) {
     res.render("goals", {
       user: "user",
       goals: list,
+      finished:false,
+    });
+  });
+};
+
+//Displays goals page with goalsDB list
+exports.goals_page_finished = function (req, res) {
+  goalDAO.getAllEntries().then((list) => {
+    res.render("goals", {
+      user: "user",
+      goals: list,
+      finished:"yes",
     });
   });
 };
@@ -136,10 +148,10 @@ exports.edit_model = function (req, res) {
 //Post request to update goal
 exports.update_goal = function (req, res) {
   console.log("Updating:", req.params.id);
-  if(!req.body.name || !req.body.description){
+  if(!req.body.name || !req.body.description || !req.body.type || !req.body.finished){
     res.status(400).send("No name/description");
   }
-  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type, req.body.published);
+  goalDAO.updateGoal(req.params.id, req.body.name, req.body.description, req.body.type, req.body.published, req.body.finished);
   res.redirect("/goals");
 }
 

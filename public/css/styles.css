@@ -22,3 +22,8 @@ ul {
 .edit-published{
     margin-left:50px
 }
+
+.true{
+    border-color:gold;
+    background-color:gold;
+}
